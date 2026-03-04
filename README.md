@@ -1,4 +1,4 @@
-# Taks Organizer (Python)
+# Tasks Organizer (Python)
 
 Simple command-line task manager built in Python.
 
