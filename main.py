@@ -14,17 +14,31 @@ def carregar_tarefas():
 
 def adicionar_tarefas(tarefas):
   tarefa = input("Digite a nova tarefa: ")
-  tarefas.append({"tarefa": tarefa, "concluida": False})
+    print("Prioridade da tarefa:")
+    print("1 - Muito urgente")
+    print("2 - Importante")
+    print("3 - Média")
+    print("4 - Baixa")
+    print("5 - Pode esperar")
+
+    prioridade =int(input("Digite a prioridade (1-5): ") )
+
+  tarefas.append({
+      "tarefa": tarefa,
+      "prioridade": prioridade,
+      "concluida": False 
+  })
   salvar_tarefas(tarefas)
   print("Tarefa adicionada!")
 
 def listar_tarefas(tarefas)
+    tarefas.sort(key=lambda x: x["prioridade"])
   if not tarefas:
     print("Nenhuma tarefa cadastrada.")
     return
   for i, t in enumerate(tarefas):
     status = "[ok]" if t ["concluida] else "[ ]"
-    print (f"{i+1}. [{status}] {t{'tarefa']}")
+    print (f"{i+1}. [{status}] {t{'tarefa']} | Prioridade: {tarefa['prioridade']}")
 
 def concluir_tarefa(tarefas)
   listar_tarefas(tarefas)
